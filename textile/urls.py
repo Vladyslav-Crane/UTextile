@@ -17,13 +17,20 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.http import HttpResponse
+from django.urls import include, path, register_converter
 
 from . import views
+from . import convertors
+
+register_converter(convertors.FourDigitYearConverter, 'yyyy')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/', include('catalog.urls', namespace='catalog')),
+    
+
+    path('archive/<yyyy:year>/', lambda req, year: HttpResponse(f'<h1> {year} </h1>')),
 ]
 
 if settings.DEBUG:
