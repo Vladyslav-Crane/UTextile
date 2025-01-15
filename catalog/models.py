@@ -1,13 +1,15 @@
+import os
+from django.conf import settings
 from datetime import date
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
 def category_image_upload_to(instance, filename):
-    return f'media/images/category/{date.today()}/{filename}'
+    return f'images/category/{date.today()}/{filename}'
 
 def product_image_upload_to(instance, filename):
-    return f'media/images/product/{date.today()}/{filename}'
+    return f'images/product/{date.today()}/{filename}'
 
 class Category(TimeStampedModel):
     name = models.CharField(max_length=255)
