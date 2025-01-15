@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+</head>
+<body>
+<ul>
+    {% for category in categories %}
+        <li>
+            <img src="{{ category.image.url }}" alt="{{ category.name }}">
+            <h2>{{ category.name }}</h2>
+            <p>{{ category.description }}</p>
+            <p>Fabrics: {{ category.fabrics.all }}</p>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
