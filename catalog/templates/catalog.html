@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog</title>
-</head>
-<body>
-<ul>
-    {% for category in categories %}
-        <li>
-            <img src="{{ category.image.url }}" alt="{{ category.name }}">
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Catalog" as title %}
+    {% build_title title %}
+{% endblock %}
+
+{% block content %}
+    <h3>Current time: {% current_time "%Y-%m-%d %H:%M" %}</h3>
+    <p>{{ xss|safe }}</p>
+
+    <ul>
+        {% for category in categories %}
+        <li class="{% cycle 'li1' 'li2' %}">
             <h2>{{ category.name }}</h2>
+            <img src="{{ category.image.url }}" alt="{{ category.name }}">
             <p>{{ category.description }}</p>
             <p>Fabrics: {{ category.fabrics.all }}</p>
         </li>
     {% endfor %}
-</ul>
-</body>
-</html>
+    </ul>
+{% endblock %}
