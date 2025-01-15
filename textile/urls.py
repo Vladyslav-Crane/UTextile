@@ -26,6 +26,7 @@ from . import convertors
 register_converter(convertors.FourDigitYearConverter, 'yyyy')
 
 urlpatterns = [
+    path('', views.HomepageRedirect.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('catalog/', include('catalog.urls', namespace='catalog')),
     
