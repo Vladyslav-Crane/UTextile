@@ -12,3 +12,31 @@ SITE_NAME = _('UTextile')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'builtins': ['textile.templatetags.custom_tags'],
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+
+                'textile.context_processors.meta'
+            ],
+        },
+    },
+]
+# PROJECT_ROOT = path(__file__).abspath().dirname().dirname()  # /edx-platform/lms
+# REPO_ROOT = PROJECT_ROOT.dirname()
+LOCALE_PATHS = [
+    BASE_DIR / 'conf/locale',
+    PROJECT_DIR / 'catalog/conf/locale'
+]
+
+LANGUAGE_CODE = 'en'
