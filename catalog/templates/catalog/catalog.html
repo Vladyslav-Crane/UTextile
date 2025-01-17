@@ -16,7 +16,7 @@
             <h2>{{ category.name }}</h2>
             <img src="{{ category.image.url }}" alt="{{ category.name }}">
             <p>{{ category.description }}</p>
-            <p>Fabrics: {{ category.fabrics.all }}</p>
+            <p>Products: {{ category.products.all}}</p>
         </li>
     {% endfor %}
     </ul>

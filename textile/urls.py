@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/', include('catalog.urls', namespace='catalog')),
     
+    path('contacts/', views.contacts_view, name='contacts'),
 
     path('archive/<yyyy:year>/', lambda req, year: HttpResponse(f'<h1> {year} </h1>')),
 ]

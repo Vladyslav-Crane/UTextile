@@ -1,0 +1,17 @@
+<!-- templates/article_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать/Редактировать статью</title>
+</head>
+<body>
+<div>
+    <h1>Создать/Редактировать статью</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" onsubmit="return false">Сохранить</button>
+    </form>
+</div>
+</body>
+</html>

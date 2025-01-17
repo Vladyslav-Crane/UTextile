@@ -45,3 +45,27 @@ TEMPLATES = [
 LOCALE_PATHS = [BASE_DIR / "conf/locale", PROJECT_DIR / "catalog/conf/locale"]
 
 LANGUAGE_CODE = "en"
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+#         },
+#         'textile.middleware': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
+
+MIDDLEWARE.append('textile.middleware.CustomMiddleware')
