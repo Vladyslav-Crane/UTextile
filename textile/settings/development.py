@@ -1,3 +1,4 @@
+from datetime import timedelta
 import os
 from django.utils.translation import gettext_lazy as _
 
@@ -68,4 +69,22 @@ LANGUAGE_CODE = "en"
 #     },
 # }
 
-MIDDLEWARE.append('textile.middleware.CustomMiddleware')
+# MIDDLEWARE.append('textile.middleware.CustomMiddleware')1
+
+INSTALLED_APPS += [
+    "rest_framework",
+    "rest_framework_simplejwt",
+]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "SIGNING_KEY": SECRET_KEY,  # или можно другой секрет
+    # Можно добавить другие настройки
+}
