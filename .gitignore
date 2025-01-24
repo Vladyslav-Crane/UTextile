@@ -127,3 +127,7 @@ dmypy.json
 
 # ----
 *.ipynb
+
+staticfiles/
+node_modules/
+textile/static/

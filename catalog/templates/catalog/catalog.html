@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}
     {% trans "Catalog" as title %}
     {% build_title title %}
+{% endblock %}
+
+{% block scripts %} 
+    <script src="{% static 'catalog.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -20,4 +25,5 @@
         </li>
     {% endfor %}
     </ul>
+    <div id="home-app"></div>
 {% endblock %}
