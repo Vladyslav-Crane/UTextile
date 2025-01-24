@@ -23,6 +23,7 @@ from django.urls import include, path, register_converter
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
+    TokenBlacklistView,
 )
 from . import views
 from . import convertors
@@ -31,9 +32,13 @@ register_converter(convertors.FourDigitYearConverter, "yyyy")
 
 urlpatterns = [
     path("", views.HomepageRedirect.as_view(), name="home"),
+    
     path("admin/", admin.site.urls),
+    
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/token/blacklist/", TokenBlacklistView.as_view(), name="token_blacklist"),
+
     path("catalog/", include("catalog.urls", namespace="catalog")),
     path("contacts/", views.contacts_view, name="contacts"),
     path("archive/<yyyy:year>/", lambda req, year: HttpResponse(f"<h1> {year} </h1>")),

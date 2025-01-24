@@ -74,6 +74,7 @@ LANGUAGE_CODE = "en"
 INSTALLED_APPS += [
     "rest_framework",
     "rest_framework_simplejwt",
+    "rest_framework_simplejwt.token_blacklist",
 ]
 
 REST_FRAMEWORK = {
@@ -86,5 +87,10 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "SIGNING_KEY": SECRET_KEY,  # или можно другой секрет
-    # Можно добавить другие настройки
+    # Включаем ротацию: после refresh старый токен перестает работать
+    "ROTATE_REFRESH_TOKENS": True,
+    # Сразу помещать старый refresh-токен в blacklisted
+    "BLACKLIST_AFTER_ROTATION": True,
 }
+
+TIME_ZONE = "Asia/Istanbul"
