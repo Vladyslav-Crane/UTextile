@@ -31,7 +31,7 @@ from . import convertors
 register_converter(convertors.FourDigitYearConverter, "yyyy")
 
 urlpatterns = [
-    path("", views.HomepageRedirect.as_view(), name="home"),
+    path("", views.index, name="index"),
     
     path("admin/", admin.site.urls),
     

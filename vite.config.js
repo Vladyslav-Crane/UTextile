@@ -5,10 +5,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        catalog: "./catalog/static/src/Catalog.jsx",
+        catalog: "./catalog/static/src/Apps/Catalog/Catalog.jsx",
       },
       output: {
-        entryFileNames: "static/[name].js",
+        entryFileNames: "[name].js",
       },
     },
   },

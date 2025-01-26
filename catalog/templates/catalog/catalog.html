@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% load i18n %}
 {% load static %}
 
@@ -12,18 +12,7 @@
 {% endblock %}
 
 {% block content %}
-    <h3>Current time: {% current_time "%Y-%m-%d %H:%M" %}</h3>
-    <p>{{ xss|safe }}</p>
+    <section id="page-catalog">
 
-    <ul>
-        {% for category in categories %}
-        <li class="{% cycle 'li1' 'li2' %}">
-            <h2>{{ category.name }}</h2>
-            <img src="{{ category.image.url }}" alt="{{ category.name }}">
-            <p>{{ category.description }}</p>
-            <p>Products: {{ category.products.all}}</p>
-        </li>
-    {% endfor %}
-    </ul>
-    <div id="home-app"></div>
+    </section>
 {% endblock %}
