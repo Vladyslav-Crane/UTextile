@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-content">
+      <h1>UTextile</h1>
+      <p>
+        UTextile is a textile company that sells a variety of textile products.
+        Our products are made from the finest materials and are designed to last.
+        Check out our catalog to see our products.
+      </p>
+      <button class="btn-get-started">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Секция "Pricing" -->
+  <section class="pricing-section">
+    <h2>Welcome to UTextile</h2>
+    <p>
+        UTextile is a textile company that sells a variety of textile products.
+        Our products are made from the finest materials and are designed to last.
+        Check out our <a href="{% url 'catalog:catalog' %}">catalog</a> to see our products.
+    </p>
+    <div class="card-list">
+      <div class="card">
+        <div class="image"></div>
+        <h3>Lorem ipsum dolor</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#">Learn more &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="image"></div>
+        <h3>Lorem ipsum dolor</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#">Learn more &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="image"></div>
+        <h3>Lorem ipsum dolor</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#">Learn more &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="image"></div>
+        <h3>Lorem ipsum dolor</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#">Learn more &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}

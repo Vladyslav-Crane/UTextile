@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}UTextile{% endblock %}</title>
-    {% block scripts %}  {% endblock %}
-</head>
-<body>
-    <header>
-        <!-- Navigation -->
-    </header>
-    
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+    {% block styles %} {% endblock %}
+  </head>
+  <body>
+    {% include 'header.html' %}
+
     <main>
-        {% block content %}{% endblock %}
+        {% block content %} {% endblock %} 
     </main>
-    
-    <footer>
-        <!-- Footer -->
-    </footer>
-</body>
+
+    {% include 'footer.html' %} 
+
+    <script src="{% static 'scripts/utils.js' %}"></script>
+    {% block scripts %} {% endblock %}
+  </body>
 </html>

@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from .common import *
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 DEBUG = True
 
 

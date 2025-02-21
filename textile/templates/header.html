@@ -1,0 +1,27 @@
+<header>
+    <div class="logo">
+      <a href="{% url 'index' %}">
+        Company Logo
+      </a>
+    </div>
+    <div class="header-right">
+      <!-- Навигация -->
+      <nav>
+        <ul id="nav-list">
+          <li><a href="{% url 'catalog:catalog' %}">Catalog</a></li>
+          <li><a href="#">User Examples</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Docs</a></li>
+        </ul>
+      </nav>
+      <!-- Кнопка гамбургера (только на моб.экранах) -->
+      <div class="hamburger" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Кнопка Get Started -->
+      <button class="btn-get-started">Get Started</button>
+    </div>
+  </header>
