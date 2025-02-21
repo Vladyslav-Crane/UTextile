@@ -19,7 +19,7 @@ def contacts_view(request):
             email = form.cleaned_data["email"]
             message = form.cleaned_data["message"]
             # Например, отправка email или сохранение в базе данных
-            return redirect("home")
+            return redirect("index")
     else:
         form = ContactForm()
     return render(request, "contacts.html", {"form": form})

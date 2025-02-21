@@ -1,4 +1,6 @@
+from django.contrib.sessions.models import Session
 from django.contrib import admin
+from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
 from .models import Category, ProductType, Product
 
 # Register your models here.
@@ -20,6 +22,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ("category",)
 
 
+admin.site.register(Session)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(ProductType, ProductTypeAdmin)
 admin.site.register(Product, ProductAdmin)
