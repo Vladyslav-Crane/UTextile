@@ -6,9 +6,11 @@
     {% trans "Catalog" as title %}
     {% build_title title %}
 {% endblock %}
-
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'assets/catalog.css' %}">
+{% endblock %}
 {% block scripts %} 
-    <script src="{% static 'catalog.js' %}" defer></script>
+    <script src="{% static 'catalog.js' %}"></script>
 {% endblock %}
 
 {% block content %}

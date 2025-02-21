@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 
 import Catalog from "./Catalog";
 
-function HomeApp() {
-  return <h1>hello</h1>;
+function App() {
+  return <Catalog />;
 }
 
-ReactDOM.render(<HomeApp />, document.getElementById("page-catalog"));
+ReactDOM.render(<App />, document.getElementById("page-catalog"));

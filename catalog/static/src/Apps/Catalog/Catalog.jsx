@@ -1,5 +1,5 @@
 import React from "react";
-import "./Catalog.css";
+import "./catalog.css";
 
 function Catalog() {
   return (
